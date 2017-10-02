@@ -36,14 +36,14 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnClose" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="txtLastName" min="-2" pref="182" max="-2" attributes="0"/>
-                  <Component id="txtFirstName" min="-2" pref="182" max="-2" attributes="0"/>
+                  <Component id="txtLastName" pref="182" max="32767" attributes="0"/>
+                  <Component id="txtFirstName" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="13" max="32767" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="375" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -67,8 +67,8 @@
                   <Component id="btnClose" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="141" max="-2" attributes="0"/>
-              <EmptySpace pref="147" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="277" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
