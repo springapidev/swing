@@ -1,0 +1,11 @@
+CREATE TABLE `tbl_person` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `birthDate` varchar(45) DEFAULT NULL,
+  `gender` varchar(45) DEFAULT NULL,
+  `hobby` varchar(45) DEFAULT NULL,
+  `country` varchar(45) DEFAULT NULL,
+  `note` varchar(245) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
