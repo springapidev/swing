@@ -18,10 +18,21 @@ public class Test {
         ps = new PersonService();
        // ps.save(p);
        
-                System.out.println("size: "+ ps.getPersons().size());
+         //       System.out.println("size: "+ ps.getPersons().size());
              //   ps.delete(5);
              
-             p.setId(4);
-             ps.update(p);
+          //   p.setId(3);
+          //   ps.update(p);
+          
+          //split string from comma separated
+          String animals = "dog, cat, bear, elephant, giraffe";
+if(animals.contains("dog")){
+    System.out.println("ok");
+}
+String[] animalsArray = animals.split(",");
+      for(String s: animalsArray){
+          System.out.println(""+s);
+      }
+          
     }
 }

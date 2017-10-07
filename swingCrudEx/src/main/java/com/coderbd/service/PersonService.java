@@ -65,15 +65,17 @@ public class PersonService implements PersonDAO {
                         + "," + p.getNote() + " where id=" + p.getId();
                 System.out.println(sql);*/
                 PreparedStatement stmt = conn.prepareStatement("update tbl_person SET name=?, email=?, birthDate=?, gender=?, hobby=?, country=?, note=?  where id=?");
-                stmt.setInt(1, p.getId());
-                stmt.setString(2, p.getName());
-                stmt.setString(3, p.getEmail());
-                stmt.setString(4, p.getBirthDate());
-                stmt.setString(5, p.getGender());
-                stmt.setString(6, p.getHobby());
-                stmt.setString(7, p.getCountry());
-                stmt.setString(8, p.getNote());
+
+                stmt.setString(1, p.getName());
+                stmt.setString(2, p.getEmail());
+                stmt.setString(3, p.getBirthDate());
+                stmt.setString(4, p.getGender());
+                stmt.setString(5, p.getHobby());
+                stmt.setString(6, p.getCountry());
+                stmt.setString(7, p.getNote());
+                stmt.setInt(8, p.getId());
                 int i = stmt.executeUpdate();
+
                 System.out.println(i + " records Updated");
             }
             // con.close();

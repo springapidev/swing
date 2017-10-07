@@ -57,10 +57,11 @@ public class PersonForm extends javax.swing.JFrame {
         tAreaNote = new javax.swing.JTextArea();
         btnAdd = new javax.swing.JButton();
         btnDel = new javax.swing.JButton();
-        btnExit = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDisplay = new javax.swing.JTable();
         lblMsg = new javax.swing.JLabel();
+        rOther = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Add Person");
@@ -109,10 +110,10 @@ public class PersonForm extends javax.swing.JFrame {
             }
         });
 
-        btnExit.setText("Exit");
-        btnExit.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExitActionPerformed(evt);
+                btnUpdateActionPerformed(evt);
             }
         });
 
@@ -133,6 +134,9 @@ public class PersonForm extends javax.swing.JFrame {
 
         lblMsg.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
+        buttonGroup1.add(rOther);
+        rOther.setText("Other");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -148,29 +152,32 @@ public class PersonForm extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jLabel4))
                 .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAdd)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnExit))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(chkRead)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chkCode))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnAdd)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnDel)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnUpdate))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(chkRead)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(chkCode))
+                        .addComponent(txtBirthDay)
+                        .addComponent(txtEmail)
+                        .addComponent(txtName)
+                        .addComponent(cmbCountry, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1)
+                        .addComponent(lblMsg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(rMale)
                         .addGap(18, 18, 18)
-                        .addComponent(rFemale))
-                    .addComponent(txtBirthDay, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                    .addComponent(txtName)
-                    .addComponent(cmbCountry, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1)
-                    .addComponent(lblMsg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(rFemale)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rOther)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -199,7 +206,8 @@ public class PersonForm extends javax.swing.JFrame {
                                 .addComponent(jLabel5))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(rMale)
-                                .addComponent(rFemale)))
+                                .addComponent(rFemale)
+                                .addComponent(rOther)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
@@ -219,16 +227,46 @@ public class PersonForm extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnAdd)
                             .addComponent(btnDel)
-                            .addComponent(btnExit))))
+                            .addComponent(btnUpdate))))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_btnExitActionPerformed
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        String name = txtName.getText();
+        String email = txtEmail.getText();
+        String birthDay = txtBirthDay.getText();
+        String gender = "";
+        if (rMale.isSelected()) {
+            gender = rMale.getText();
+        } else if (rFemale.isSelected()) {
+            gender = rFemale.getText();
+        } else {
+            gender = rOther.getText();
+        }
+
+        String hobby = "";
+        if (chkRead.isSelected()) {
+            hobby += chkRead.getText();
+        }
+        if (chkCode.isSelected()) {
+            hobby += ", ";
+            hobby += chkCode.getText() + " ";
+        }
+
+        String country = cmbCountry.getItemAt(cmbCountry.getSelectedIndex());
+        String note = tAreaNote.getText();
+        Person person = new Person(name, email, birthDay, gender, hobby, country, note);
+        int i = tblDisplay.getSelectedRow();
+        TableModel model = tblDisplay.getModel();
+        person.setId(Integer.parseInt(model.getValueAt(i, 0).toString()));
+        ps = new PersonService();
+        ps.update(person);
+        lblMsg.setText("1 Record Successfully Updated!");
+        refreshTable();
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         String name = txtName.getText();
@@ -240,14 +278,15 @@ public class PersonForm extends javax.swing.JFrame {
         } else if (rFemale.isSelected()) {
             gender = rFemale.getText();
         } else {
-            gender = "other";
+            gender = rOther.getText();
         }
 
         String hobby = "";
         if (chkRead.isSelected()) {
-            hobby += chkRead.getText() + " ";
+            hobby += chkRead.getText();
         }
         if (chkCode.isSelected()) {
+            hobby += ", ";
             hobby += chkCode.getText() + " ";
         }
 
@@ -266,6 +305,33 @@ public class PersonForm extends javax.swing.JFrame {
         txtName.setText(model.getValueAt(i, 1).toString());
         txtEmail.setText(model.getValueAt(i, 2).toString());
         txtBirthDay.setText(model.getValueAt(i, 3).toString());
+
+        //For radio Button
+        String gender = model.getValueAt(i, 4).toString();
+
+        if (gender.equals("Male")) {
+            rMale.setSelected(true);
+        } else if (gender.equals("Female")) {
+            rFemale.setSelected(true);
+        } else {
+            rOther.setSelected(true);
+        }
+
+        //checkbox
+        String hobby = model.getValueAt(i, 5).toString();
+        if (hobby.contains("Read")) {
+            chkRead.setSelected(true);
+        } else {
+            chkRead.setSelected(false);
+        }
+        if (hobby.contains("Code")) {
+            chkCode.setSelected(true);
+        } else {
+            chkCode.setSelected(false);
+        }
+
+        String country = model.getValueAt(i, 6).toString();
+        cmbCountry.setSelectedItem(country);
 
         //  cmbCountry.setSelectedIndex(i);
         tAreaNote.setText(model.getValueAt(i, 7).toString());
@@ -345,7 +411,7 @@ public class PersonForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDel;
-    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JCheckBox chkCode;
     private javax.swing.JCheckBox chkRead;
@@ -362,6 +428,7 @@ public class PersonForm extends javax.swing.JFrame {
     private javax.swing.JLabel lblMsg;
     private javax.swing.JRadioButton rFemale;
     private javax.swing.JRadioButton rMale;
+    private javax.swing.JRadioButton rOther;
     private javax.swing.JTextArea tAreaNote;
     private javax.swing.JTable tblDisplay;
     private javax.swing.JTextField txtBirthDay;
