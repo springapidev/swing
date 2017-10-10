@@ -55,15 +55,6 @@ public class PersonService implements PersonDAO {
     public void update(Person p) {
         try {
             if (p.getId() != 0) {
-                /*     String sql = "update tbl_person set "
-                        + "name=" + p.getName()
-                        + "," + "email=" + p.getEmail()
-                        + "," + "birthDate=" + p.getBirthDate()
-                        + "," + "gender=" + p.getGender()
-                        + "," + "hobby=" + p.getHobby()
-                        + "," + "country=" + p.getCountry()
-                        + "," + p.getNote() + " where id=" + p.getId();
-                System.out.println(sql);*/
                 PreparedStatement stmt = conn.prepareStatement("update tbl_person SET name=?, email=?, birthDate=?, gender=?, hobby=?, country=?, note=?  where id=?");
 
                 stmt.setString(1, p.getName());
