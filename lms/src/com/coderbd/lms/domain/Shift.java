@@ -10,22 +10,20 @@ public class Shift {
 
     private int id;
     private String name;
-    private Date startingTime;
-    private Date endingTime;
-    private boolean status;
-    private Date createdDate;
-    private String createdBy;
+    private String startingTime;
+    private String endingTime;
+    private String status;
+
+  
 
     public Shift() {
     }
 
-    public Shift(String name, Date startingTime, Date endingTime, boolean status, Date createdDate, String createdBy) {
+    public Shift(String name, String startingTime, String endingTime, String status) {
         this.name = name;
         this.startingTime = startingTime;
         this.endingTime = endingTime;
         this.status = status;
-        this.createdDate = createdDate;
-        this.createdBy = createdBy;
     }
 
     public int getId() {
@@ -44,45 +42,31 @@ public class Shift {
         this.name = name;
     }
 
-    public Date getStartingTime() {
+    public String getStartingTime() {
         return startingTime;
     }
 
-    public void setStartingTime(Date startingTime) {
+    public void setStartingTime(String startingTime) {
         this.startingTime = startingTime;
     }
 
-    public Date getEndingTime() {
+    public String getEndingTime() {
         return endingTime;
     }
 
-    public void setEndingTime(Date endingTime) {
+    public void setEndingTime(String endingTime) {
         this.endingTime = endingTime;
     }
 
-    public boolean isStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
-    public Date getCreatedDate() {
-        return createdDate;
-    }
+  
 
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-    
-    
-}
+   
+   }

@@ -7,7 +7,7 @@ package com.coderbd.lms.domain;
 public class BookSummary {
 
     private int id;
-    private int bookId;
+    private String bookCode;
     private String bookName;
     private int totalStock;
     private int avilableStock;
@@ -17,14 +17,34 @@ public class BookSummary {
     public BookSummary() {
     }
 
-    public BookSummary(int bookId, String bookName, int totalStock, int avilableStock, int alreadyLend, int lostQty) {
-        this.bookId = bookId;
+    public BookSummary(String bookCode, String bookName, int totalStock, int avilableStock, int alreadyLend, int lostQty) {
+        this.bookCode = bookCode;
         this.bookName = bookName;
         this.totalStock = totalStock;
         this.avilableStock = avilableStock;
         this.alreadyLend = alreadyLend;
         this.lostQty = lostQty;
     }
+
+    public BookSummary(int totalStock, int avilableStock, int alreadyLend) {
+        this.totalStock = totalStock;
+        this.avilableStock = avilableStock;
+        this.alreadyLend = alreadyLend;
+    }
+
+    public BookSummary(int totalStock, int avilableStock, int alreadyLend, int lostQty) {
+        this.totalStock = totalStock;
+        this.avilableStock = avilableStock;
+        this.alreadyLend = alreadyLend;
+        this.lostQty = lostQty;
+    }
+
+    public BookSummary(int totalStock, int avilableStock) {
+        this.totalStock = totalStock;
+        this.avilableStock = avilableStock;
+    }
+
+   
 
     public int getId() {
         return id;
@@ -34,12 +54,12 @@ public class BookSummary {
         this.id = id;
     }
 
-    public int getBookId() {
-        return bookId;
+    public String getBookCode() {
+        return bookCode;
     }
 
-    public void setBookId(int bookId) {
-        this.bookId = bookId;
+    public void setBookCode(String bookCode) {
+        this.bookCode = bookCode;
     }
 
     public String getBookName() {
@@ -81,7 +101,6 @@ public class BookSummary {
     public void setLostQty(int lostQty) {
         this.lostQty = lostQty;
     }
-    
-    
 
+  
 }

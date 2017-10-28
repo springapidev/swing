@@ -1,11 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.coderbd.lms.domain;
-
-import java.util.Date;
 
 /**
  *
@@ -14,18 +7,13 @@ import java.util.Date;
 public class Publisher {
    private int id;
     private String name;
-    private boolean status;
-    private Date createdDate;
-    private String createdBy;
+   
 
     public Publisher() {
     }
 
-    public Publisher(String name, boolean status, Date createdDate, String createdBy) {
+    public Publisher(String name) {
         this.name = name;
-        this.status = status;
-        this.createdDate = createdDate;
-        this.createdBy = createdBy;
     }
 
     public int getId() {
@@ -44,29 +32,6 @@ public class Publisher {
         this.name = name;
     }
 
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-    
+   
       
 }

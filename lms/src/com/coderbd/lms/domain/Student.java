@@ -1,6 +1,5 @@
 package com.coderbd.lms.domain;
 
-import java.util.Date;
 
 /**
  *
@@ -22,15 +21,12 @@ public class Student {
     private String district;
     private String division;
     private String country;
-    private boolean status;
-    private Date createdDate;
-    private String createdBy;
+   
 
     public Student() {
     }
 
-    public Student(int id, String name, int registrationNo, int boardRollNo, int classRoll, int departmentId, int shiftId, String houseNo, String roadNo, String blockOrVillage, String thana, String district, String division, String country, boolean status, Date createdDate, String createdBy) {
-        this.id = id;
+    public Student(String name, int registrationNo, int boardRollNo, int classRoll, int departmentId, int shiftId, String houseNo, String roadNo, String blockOrVillage, String thana, String district, String division, String country) {
         this.name = name;
         this.registrationNo = registrationNo;
         this.boardRollNo = boardRollNo;
@@ -44,9 +40,6 @@ public class Student {
         this.district = district;
         this.division = division;
         this.country = country;
-        this.status = status;
-        this.createdDate = createdDate;
-        this.createdBy = createdBy;
     }
 
     public int getId() {
@@ -160,29 +153,7 @@ public class Student {
     public void setCountry(String country) {
         this.country = country;
     }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
+    
+    
 
 }

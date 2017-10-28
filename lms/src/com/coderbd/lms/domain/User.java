@@ -1,7 +1,5 @@
 package com.coderbd.lms.domain;
 
-import java.util.Date;
-
 /**
  *
  * @author Rajaul Islam
@@ -15,23 +13,17 @@ public class User {
     private String username;
     private String password;
     private String userType;
-    private boolean status;
-    private Date createdDate;
-    private String createdBy;
-
+  
     public User() {
     }
 
-    public User(String name, String email, String mobile, String username, String password, String userType, boolean status, Date createdDate, String createdBy) {
+    public User(String name, String email, String mobile, String username, String password, String userType) {
         this.name = name;
         this.email = email;
         this.mobile = mobile;
         this.username = username;
         this.password = password;
         this.userType = userType;
-        this.status = status;
-        this.createdDate = createdDate;
-        this.createdBy = createdBy;
     }
 
     public int getId() {
@@ -90,29 +82,7 @@ public class User {
         this.userType = userType;
     }
 
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
+  
     
     
 

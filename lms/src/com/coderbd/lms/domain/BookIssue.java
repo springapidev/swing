@@ -11,16 +11,16 @@ public class BookIssue {
     private int id;
     private int bookId;
     private int studentId;
-    private Date issueDate;
-    private Date expireDate;
-    private Date returnDate;
+    private String issueDate;
+    private String expireDate;
+    private String returnDate;
     private int qty;
-    private boolean status;
+    private String status;
 
     public BookIssue() {
     }
 
-    public BookIssue(int bookId, int studentId, Date issueDate, Date expireDate, Date returnDate, int qty, boolean status) {
+    public BookIssue(int bookId, int studentId, String issueDate, String expireDate, String returnDate, int qty, String status) {
         this.bookId = bookId;
         this.studentId = studentId;
         this.issueDate = issueDate;
@@ -54,27 +54,27 @@ public class BookIssue {
         this.studentId = studentId;
     }
 
-    public Date getIssueDate() {
+    public String getIssueDate() {
         return issueDate;
     }
 
-    public void setIssueDate(Date issueDate) {
+    public void setIssueDate(String issueDate) {
         this.issueDate = issueDate;
     }
 
-    public Date getExpireDate() {
+    public String getExpireDate() {
         return expireDate;
     }
 
-    public void setExpireDate(Date expireDate) {
+    public void setExpireDate(String expireDate) {
         this.expireDate = expireDate;
     }
 
-    public Date getReturnDate() {
+    public String getReturnDate() {
         return returnDate;
     }
 
-    public void setReturnDate(Date returnDate) {
+    public void setReturnDate(String returnDate) {
         this.returnDate = returnDate;
     }
 
@@ -86,12 +86,15 @@ public class BookIssue {
         this.qty = qty;
     }
 
-    public boolean isStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
+   
+
+   
 }

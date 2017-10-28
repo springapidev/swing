@@ -25,15 +25,12 @@ public class Book {
     private String rackNo;
     private String issnNo;
     private String category;
-    private Date purchaseDate;
-    private boolean status;
-    private Date createdDate;
-    private String createdBy;
-
+    private String purchaseDate;
+ 
     public Book() {
     }
 
-    public Book(String name, String bookCode, String author, String publisher, String edition, double unitPrice, int qty, double totalPrice, String rackNo, String issnNo, String category, Date purchaseDate, boolean status, Date createdDate, String createdBy) {
+    public Book(String name, String bookCode, String author, String publisher, String edition, double unitPrice, int qty, double totalPrice, String rackNo, String issnNo, String category, String purchaseDate) {
         this.name = name;
         this.bookCode = bookCode;
         this.author = author;
@@ -46,9 +43,6 @@ public class Book {
         this.issnNo = issnNo;
         this.category = category;
         this.purchaseDate = purchaseDate;
-        this.status = status;
-        this.createdDate = createdDate;
-        this.createdBy = createdBy;
     }
 
     public int getId() {
@@ -147,37 +141,13 @@ public class Book {
         this.category = category;
     }
 
-    public Date getPurchaseDate() {
+    public String getPurchaseDate() {
         return purchaseDate;
     }
 
-    public void setPurchaseDate(Date purchaseDate) {
+    public void setPurchaseDate(String purchaseDate) {
         this.purchaseDate = purchaseDate;
     }
 
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-    
     
 }

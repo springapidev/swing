@@ -23,6 +23,7 @@ public class CountryForm extends javax.swing.JFrame {
     public CountryForm() {
         initComponents();
         displayCountries();
+
     }
 
     /**
@@ -101,14 +102,19 @@ public class CountryForm extends javax.swing.JFrame {
 
     private void cmbCounItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbCounItemStateChanged
         String country = cmbCoun.getItemAt(cmbCoun.getSelectedIndex());
-        lblCountry.setText(country);
+        String ids = country.split(",")[0];
+        lblCountry.setText(ids);
+
+
     }//GEN-LAST:event_cmbCounItemStateChanged
+
     public void displayCountries() {
         cs = new CountryService();
-        Set<Country> cList =cs.getCountries();
+        Set<Country> cList = cs.getCountries();
 
         cList.forEach((c) -> {
-            cmbCoun.addItem(c.getName());
+            cmbCoun.addItem(c.getId() + ", " + c.getName());
+
         });
 
     }

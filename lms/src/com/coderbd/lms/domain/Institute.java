@@ -19,11 +19,11 @@ public class Institute {
     private String country;
     private String addresstype;
     private String instituteType;
-    private boolean status;
-    private Date createdDate;
-    private String createdBy;
 
-    public Institute(String name, String houseNo, String roadNo, String blockOrVillage, String thana, String district, String division, String country, String addresstype, String instituteType, boolean status, Date createdDate, String createdBy) {
+    public Institute() {
+    }
+
+    public Institute(String name, String houseNo, String roadNo, String blockOrVillage, String thana, String district, String division, String country, String addresstype, String instituteType) {
         this.name = name;
         this.houseNo = houseNo;
         this.roadNo = roadNo;
@@ -34,9 +34,6 @@ public class Institute {
         this.country = country;
         this.addresstype = addresstype;
         this.instituteType = instituteType;
-        this.status = status;
-        this.createdDate = createdDate;
-        this.createdBy = createdBy;
     }
 
     public int getId() {
@@ -126,29 +123,7 @@ public class Institute {
     public void setInstituteType(String instituteType) {
         this.instituteType = instituteType;
     }
+   
 
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
+   
 }

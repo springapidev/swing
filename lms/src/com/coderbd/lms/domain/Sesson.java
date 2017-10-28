@@ -1,6 +1,5 @@
 package com.coderbd.lms.domain;
 
-import java.util.Date;
 
 /**
  *
@@ -9,15 +8,12 @@ import java.util.Date;
 public class Sesson {
     private int id;
     private String name;
-    private boolean status;
-    private Date createdDate;
-    private String createdBy;
 
-    public Sesson(String name, boolean status, Date createdDate, String createdBy) {
+    public Sesson() {
+    }
+
+    public Sesson(String name) {
         this.name = name;
-        this.status = status;
-        this.createdDate = createdDate;
-        this.createdBy = createdBy;
     }
 
     public int getId() {
@@ -35,31 +31,7 @@ public class Sesson {
     public void setName(String name) {
         this.name = name;
     }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-    
+   
     
     
 }

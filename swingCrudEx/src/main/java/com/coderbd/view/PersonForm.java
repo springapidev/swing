@@ -258,6 +258,7 @@ public class PersonForm extends javax.swing.JFrame {
 
         String country = cmbCountry.getItemAt(cmbCountry.getSelectedIndex());
         String note = tAreaNote.getText();
+        
         Person person = new Person(name, email, birthDay, gender, hobby, country, note);
         int i = tblDisplay.getSelectedRow();
         TableModel model = tblDisplay.getModel();
