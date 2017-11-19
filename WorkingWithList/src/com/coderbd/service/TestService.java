@@ -31,7 +31,7 @@ public class TestService {
                     stmt = conn.prepareStatement("insert into tbl_country(name) values(?)");
                     stmt.setString(1, c.getName());
                     int i = stmt.executeUpdate();
-                    System.out.println(i + " records inserted");
+                   
                 } catch (SQLException ex) {
                     Logger.getLogger(TestService.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -39,6 +39,7 @@ public class TestService {
             });
 
         }
+         System.out.println(countries.size() + " records inserted");
      }
      
      
