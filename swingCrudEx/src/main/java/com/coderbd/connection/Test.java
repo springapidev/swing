@@ -4,6 +4,7 @@ import com.coderbd.domain.Country;
 import com.coderbd.domain.Person;
 import com.coderbd.service.CountryService;
 import com.coderbd.service.PersonService;
+import java.sql.Connection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,8 +17,8 @@ public class Test {
     private static PersonService ps;
     
     public static void main(String[] args) {
-        // Connection conn = DbConnection.getConnection();
-
+         Connection conn = DbConnection.getConnection();
+/*
         Person p = new Person("Reza", "springapidev@gmail.com", "01-01-1980", "Male", "Read, Write, Code", "BD", "Wow");
         ps = new PersonService();
         // ps.save(p);
@@ -43,6 +44,6 @@ public class Test {
         clist.add(new Country("Pak"));
         CountryService cs = new CountryService();
         cs.saveList(clist);
-        
+        */
     }
 }
