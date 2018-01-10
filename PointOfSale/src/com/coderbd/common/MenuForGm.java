@@ -18,7 +18,7 @@ import javax.swing.JMenuItem;
  *
  * @author Instructor
  */
-public class MenuForAdmin {
+public class MenuForGm {
     
     public static JMenuBar displayMenu(JFrame f){
     JMenuBar menuBar=new JMenuBar();

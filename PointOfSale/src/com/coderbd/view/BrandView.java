@@ -5,7 +5,7 @@
  */
 package com.coderbd.view;
 
-import com.coderbd.common.MenuForAdmin;
+
 
 /**
  *
@@ -18,7 +18,7 @@ public class BrandView extends javax.swing.JFrame {
      */
     public BrandView() {
         initComponents();
-        setJMenuBar(MenuForAdmin.displayMenu(this));
+  
     }
 
     /**

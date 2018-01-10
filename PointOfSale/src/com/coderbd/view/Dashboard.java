@@ -5,7 +5,7 @@
  */
 package com.coderbd.view;
 
-import com.coderbd.common.MenuForAdmin;
+
 
 /**
  *
@@ -18,7 +18,7 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
-         setJMenuBar(MenuForAdmin.displayMenu(this));
+      
     }
 
     /**

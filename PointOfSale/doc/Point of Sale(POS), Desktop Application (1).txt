@@ -1,0 +1,214 @@
+﻿Point of Sale(POS), Desktop Application
+Point Of sale (POS)
+Requirements;
+Purpose Of POS:
+
+
+1. Product Managment
+2. Complete Product Sales System
+
+
+Requirements:
+1. There will be Branch of Company
+2. There will be super admin at company level
+3. Super admin will be responsible to
+- manage Branches and users / actors
+  all activities like Product distribution,
+ -order recieve from branches,
+ -manage to purchase product
+ - and calculate inventory, profits/loss, Salary
+ 
+ 4. There will be branch manager, salesman
+ - order creation if product threshold is active
+ - recieve product according to order
+ - manager will pay his employees salary.
+ -absent count will have
+ - card system and points system and discount
+5. Salesman will be able to sale multiple product in single recieve.
+
+
+Accounts:
+* Assets: Fixed Asset, Current Asset
+* liabilities:
+* Income
+* Expense
+
+
+Actor:
+-super admin at company
+-Auditor at company
+-Branch Manager at Branch
+-Sales man at branch
+
+
+Core Analysis:
+Company
+    -Branch
+product Category(Food, Fish, Meat, Vegatable)
+    -product Brand(Padma Ilsha, Megna Ilsha, Square, Pran)
+    - product type(small, big)
+
+
+    product purchase details:
+    productID
+    productName
+    productCode
+    qty
+    productMode(qty/kg)
+    unitPrice
+    salableUnitPrice
+    totalprice
+    brandName
+    productCategory
+    productType
+    weight
+    purchaseDate
+    
+    product sales:
+    productID
+    productName
+    productCode
+    qty
+    variable(qty/kg)
+    unitPrice
+    totalprice
+    brandName
+    productCategory
+    productType
+    weight
+    invoiceID
+    qRCode
+    customerID
+    salesDate
+    
+    
+    productSummary:(if we purchase, it will be plus and if we sell, it will be minus)
+    productCode
+    productName
+    totalPurchasedQtyOrKg
+    totalSalesQtyOrKg
+    avilableQtyOrKg
+    
+            
+Employee profile: // Zunaid
+Name:
+ID:
+Phone:
+Email:
+Salary:
+Join date:
+Address:
+Branch :
+
+
+customer:
+customerID(mobile no)
+customerName
+email(optional)
+
+
+Discount/Offer(More thinking needs):
+past offer , running offer, upcoming offer, reqular offer
+offer(fromdate to todate based on product)
+id
+amount
+discountPercentage
+
+
+Repots;
+1. Branch List
+2. Category wise product purchase list
+3. Category wise product purchase list at Branch
+4. Brand wise product purchase list
+5. Brand wise product purchase list at Branch
+6. Daily Purchase list
+7. weekly Purchase list
+8. monthly Purchase list
+9. Yearly Purchase list
+10. Till date Purchase list
+11. Date wise Purchase list
+12. Category wise product purchase list
+13. Category wise product purchase list at Branch
+14. Brand wise product purchase list
+15. Brand wise product purchase list at Branch
+16. Daily Purchase list
+17. weekly Purchase list
+18. monthly Purchase list
+19. Yearly Purchase list
+20. Till date Purchase list
+21. Date wise Purchase list
+22. Most sale product of the day
+22. Most sale product of the weekly
+22. Most sale product of the monthly
+22. Most sale product of the Yearly
+22. Most sale product of data to date
+
+
+Module:
+1.Product- Rashidul
+2. Accounts & Audit- Zunaid
+3. Inventory- Emon
+4. HR- Munna:
+-Recruitment
+-Posting
+-Attendance
+-
+
+
+Optional Module;
+SMS system
+bKash/Banking System
+
+
+
+
+============================Rashidul==================
+
+
+
+
+
+
+
+
+
+
+============================Zunaid==================================
+
+
+Skype : jonaid66
+
+
+Ki obostha sobar ? kuno khuj nai to ?
+
+
+
+
+=============================Munna=================================
+
+
+
+
+
+
+
+
+
+
+==========================Emon======================================
+skype;emon199227
+
+
+
+
+
+
+
+
+===============Homework for Next Class 8/1/2018
+1. Requirements Finalize---------All
+2. Requirements Analysis
+   1. Make Story- Emon
+   2. Flow chart- Munna
+   3. Use Case- Zunaid
+   4. Class Diagram -Rashidul

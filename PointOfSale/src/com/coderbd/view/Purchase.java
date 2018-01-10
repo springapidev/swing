@@ -5,7 +5,7 @@
  */
 package com.coderbd.view;
 
-import com.coderbd.common.MenuForAdmin;
+
 
 /**
  *
@@ -18,7 +18,7 @@ public class Purchase extends javax.swing.JFrame {
      */
     public Purchase() {
         initComponents();
-        setJMenuBar(MenuForAdmin.displayMenu(this));
+
     }
 
     /**
