@@ -27,30 +27,30 @@ public class ProfileView extends javax.swing.JFrame {
 
     public ProfileView() {
         initComponents();
-        menuManage("hr");
+        menuManage(userType[4]);
     }
-
-    public void menuManage(String userTy) {
-        if (userType[0].equals("superadmin")) {
+ public void menuManage(String userTy) {
+        if (userTy.equals("superadmin")) {
             setJMenuBar(MenuForSuperAdmin.displayMenu(this));
-        } else if (userType[1].equals("gm")) {
+        } else if (userTy.equals("gm")) {
             setJMenuBar(MenuForGm.displayMenu(this));
-        } else if (userType[2].equals("hr")) {
+        } else if (userTy.equals("hr")) {
             setJMenuBar(MenuForHR.displayMenu(this));
-        } else if (userType[3].equals("auditor")) {
+        } else if (userTy.equals("auditor")) {
             setJMenuBar(MenuForAuditor.displayMenu(this));
-        } else if (userType[4].equals("salesmanager")) {
+        } else if (userTy.equals("salesmanager")) {
             setJMenuBar(MenuForSalesManager.displayMenu(this));
-        } else if (userType[5].equals("branchmanager")) {
+        } else if (userTy.equals("branchmanager")) {
             setJMenuBar(MenuForBranchManager.displayMenu(this));
-        } else if (userType[6].equals("salesman")) {
+        } else if (userTy.equals("salesman")) {
             setJMenuBar(MenuForSalesMan.displayMenu(this));
-        } else if (userType[7].equals("operator")) {
+        } else if (userTy.equals("operator")) {
             setJMenuBar(MenuForOperator.displayMenu(this));
         } else {
             new LoginView().setVisible(true);
         }
     }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
