@@ -5,10 +5,15 @@
  */
 package com.coderbd.common;
 
+import com.coderbd.view.BranchView;
 import com.coderbd.view.ChangePassView;
+import com.coderbd.view.CompanyView;
 import com.coderbd.view.LoginView;
 import com.coderbd.view.ProfileView;
-import com.coderbd.view.dashboard.DashboardForAuditor;
+import com.coderbd.view.SalesView;
+import com.coderbd.view.UserRegiView;
+import com.coderbd.view.dashboard.DashboardForSalesman;
+import com.coderbd.view.dashboard.DashboardForSuperAdmin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -20,8 +25,8 @@ import javax.swing.JMenuItem;
  *
  * @author Instructor
  */
-public class MenuForAuditor {
-
+public class MenuForSalesMan {
+   
     public static JMenuBar displayMenu(JFrame f) {
         JMenuBar menuBar = new JMenuBar();
         JMenu menu1 = new JMenu("File");
@@ -32,10 +37,22 @@ public class MenuForAuditor {
             @Override
             public void actionPerformed(ActionEvent e) {
                 f.setVisible(false);
-                new DashboardForAuditor().setVisible(true);
+                new DashboardForSalesman().setVisible(true);
             }
         });
 
+        JMenuItem itemForCompany = new JMenuItem("Sales");
+        itemForCompany.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                f.setVisible(false);
+                new SalesView().setVisible(true);
+            }
+        });
+
+       
+        
         JMenuItem itemForProfile = new JMenuItem("Profile");
         itemForProfile.addActionListener(new ActionListener() {
 
@@ -66,6 +83,7 @@ public class MenuForAuditor {
             }
         });
         menu1.add(itemForSADash);
+        menu1.add(itemForCompany);
         menu2.add(itemForProfile);
         menu2.add(itemForChangePass);
         menu2.add(itemForLogout);

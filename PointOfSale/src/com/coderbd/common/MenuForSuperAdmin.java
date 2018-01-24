@@ -5,8 +5,12 @@
  */
 package com.coderbd.common;
 
-import com.coderbd.view.BranchView;
+import com.coderbd.view.ChangePassView;
 import com.coderbd.view.CompanyView;
+import com.coderbd.view.LoginView;
+import com.coderbd.view.ProfileView;
+import com.coderbd.view.UserRegiView;
+import com.coderbd.view.dashboard.DashboardForSuperAdmin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -19,35 +23,82 @@ import javax.swing.JMenuItem;
  * @author Instructor
  */
 public class MenuForSuperAdmin {
-    
-    public static JMenuBar displayMenu(JFrame f){
-    JMenuBar menuBar=new JMenuBar();
-        JMenu menu1=new JMenu("File");
-        
-        JMenuItem itemForCompany=new JMenuItem("Add Company");
+
+    public static JMenuBar displayMenu(JFrame f) {
+        JMenuBar menuBar = new JMenuBar();
+        JMenu menu1 = new JMenu("File");
+        JMenu menu2 = new JMenu("Profile");
+        JMenuItem itemForSADash = new JMenuItem("Dashboard");
+        itemForSADash.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                f.setVisible(false);
+                new DashboardForSuperAdmin().setVisible(true);
+            }
+        });
+
+        JMenuItem itemForCompany = new JMenuItem("Add Company");
         itemForCompany.addActionListener(new ActionListener() {
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-          f.setVisible(false);
-          new CompanyView().setVisible(true);
-        }
-    });
-       
-         JMenuItem itemForBranch = new JMenuItem("Add Branch");
-        itemForBranch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                f.setVisible(false);
+                new CompanyView().setVisible(true);
+            }
+        });
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-          f.setVisible(false);
-          new BranchView().setVisible(true);
-        }
-    });
-        
+       
+        JMenuItem itemForUserRegi = new JMenuItem("User Registration");
+        itemForUserRegi.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                f.setVisible(false);
+                new UserRegiView().setVisible(true);
+            }
+        });
+
+        JMenuItem itemForProfile = new JMenuItem("Profile");
+        itemForProfile.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                f.setVisible(false);
+                new ProfileView().setVisible(true);
+            }
+        });
+
+        JMenuItem itemForChangePass = new JMenuItem("Change Password");
+        itemForChangePass.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                f.setVisible(false);
+                new ChangePassView().setVisible(true);
+            }
+        });
+
+        JMenuItem itemForLogout = new JMenuItem("Logout");
+        itemForLogout.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                f.setVisible(false);
+                new LoginView().setVisible(true);
+            }
+        });
+        menu1.add(itemForSADash);
         menu1.add(itemForCompany);
-        menu1.add(itemForBranch);
+        menu1.add(itemForUserRegi);
+        menu2.add(itemForProfile);
+        menu2.add(itemForChangePass);
+        menu2.add(itemForLogout);
+        //Now add Menu at Menubar
         menuBar.add(menu1);
-    
-    return menuBar;
+        menuBar.add(menu2);
+        //It will Make Page Full Screen Mode
+        f.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        return menuBar;
     }
 }

@@ -5,6 +5,9 @@
  */
 package com.coderbd.view;
 
+import com.coderbd.common.MenuForGm;
+import com.coderbd.common.MenuForSuperAdmin;
+
 
 
 /**
@@ -18,7 +21,7 @@ public class BranchView extends javax.swing.JFrame {
      */
     public BranchView() {
         initComponents();
-      
+      setJMenuBar(MenuForGm.displayMenu(this));
     }
 
     /**

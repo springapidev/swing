@@ -5,7 +5,7 @@
  */
 package com.coderbd.view;
 
-
+import com.coderbd.common.MenuForSuperAdmin;
 
 /**
  *
@@ -18,7 +18,7 @@ public class UserRegiView extends javax.swing.JFrame {
      */
     public UserRegiView() {
         initComponents();
-     
+        setJMenuBar(MenuForSuperAdmin.displayMenu(this));
     }
 
     /**

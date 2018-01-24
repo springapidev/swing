@@ -5,6 +5,8 @@
  */
 package com.coderbd.view;
 
+import com.coderbd.common.MenuForHR;
+
 
 
 /**
@@ -18,7 +20,7 @@ public class EmployeeView extends javax.swing.JFrame {
      */
     public EmployeeView() {
         initComponents();
-      
+        setJMenuBar(MenuForHR.displayMenu(this));
     }
 
     /**

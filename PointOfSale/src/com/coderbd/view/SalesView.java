@@ -5,20 +5,22 @@
  */
 package com.coderbd.view;
 
-
+import com.coderbd.common.MenuForSalesMan;
+import com.coderbd.common.MenuForSalesManager;
+import com.coderbd.common.MenuForSuperAdmin;
 
 /**
  *
  * @author Instructor
  */
-public class Purchase extends javax.swing.JFrame {
+public class SalesView extends javax.swing.JFrame {
 
     /**
      * Creates new form Dashboard
      */
-    public Purchase() {
+    public SalesView() {
         initComponents();
-
+         setJMenuBar(MenuForSalesMan.displayMenu(this));
     }
 
     /**
@@ -40,7 +42,6 @@ public class Purchase extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Purchase");
 
         panelTop.setBackground(new java.awt.Color(204, 255, 204));
 
@@ -90,7 +91,7 @@ public class Purchase extends javax.swing.JFrame {
 
         btnPurchase.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         btnPurchase.setForeground(new java.awt.Color(0, 153, 0));
-        btnPurchase.setText("Purchase");
+        btnPurchase.setText("Daily Sales");
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 153, 0));
@@ -168,21 +169,23 @@ public class Purchase extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Purchase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SalesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Purchase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SalesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Purchase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SalesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Purchase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SalesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Purchase().setVisible(true);
+                new SalesView().setVisible(true);
             }
         });
     }

@@ -5,8 +5,12 @@
  */
 package com.coderbd.common;
 
-import com.coderbd.view.Dashboard;
-import com.coderbd.view.Purchase;
+import com.coderbd.view.ChangePassView;
+import com.coderbd.view.CompanyView;
+import com.coderbd.view.EmployeeView;
+import com.coderbd.view.LoginView;
+import com.coderbd.view.ProfileView;
+import com.coderbd.view.dashboard.DashboardForHR;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -20,33 +24,71 @@ import javax.swing.JMenuItem;
  */
 public class MenuForHR {
     
-    public static JMenuBar displayMenu(JFrame f){
-    JMenuBar menuBar=new JMenuBar();
-        JMenu menu1=new JMenu("File");
-        
-        JMenuItem itemForPurchase=new JMenuItem("Purchase");
-        itemForPurchase.addActionListener(new ActionListener() {
+  
+    public static JMenuBar displayMenu(JFrame f) {
+        JMenuBar menuBar = new JMenuBar();
+        JMenu menu1 = new JMenu("File");
+        JMenu menu2 = new JMenu("Profile");
+        JMenuItem itemForHRDash = new JMenuItem("Dashboard");
+        itemForHRDash.addActionListener(new ActionListener() {
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-          f.setVisible(false);
-          new Purchase().setVisible(true);
-        }
-    });
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                f.setVisible(false);
+                new DashboardForHR().setVisible(true);
+            }
+        });
+
+        JMenuItem itemForEmploye = new JMenuItem("Add Empoyee");
+        itemForEmploye.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                f.setVisible(false);
+                new EmployeeView().setVisible(true);
+            }
+        });
+
        
-         JMenuItem itemForDashboard=new JMenuItem("Dashboard");
-        itemForDashboard.addActionListener(new ActionListener() {
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-          f.setVisible(false);
-          new Dashboard().setVisible(true);
-        }
-    });
-        
-        menu1.add(itemForPurchase);
+        JMenuItem itemForProfile = new JMenuItem("Profile");
+        itemForProfile.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                f.setVisible(false);
+                new ProfileView().setVisible(true);
+            }
+        });
+
+        JMenuItem itemForChangePass = new JMenuItem("Change Password");
+        itemForChangePass.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                f.setVisible(false);
+                new ChangePassView().setVisible(true);
+            }
+        });
+
+        JMenuItem itemForLogout = new JMenuItem("Logout");
+        itemForLogout.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                f.setVisible(false);
+                new LoginView().setVisible(true);
+            }
+        });
+        menu1.add(itemForHRDash);
+        menu2.add(itemForProfile);
+        menu2.add(itemForChangePass);
+        menu2.add(itemForLogout);
+        //Now add Menu at Menubar
         menuBar.add(menu1);
-    
-    return menuBar;
+        menuBar.add(menu2);
+        //It will Make Page Full Screen Mode
+        f.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        return menuBar;
     }
 }
