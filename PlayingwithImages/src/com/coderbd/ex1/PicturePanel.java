@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Rajail Islam
+ * @author Rajaul Islam
  */
 class PicturePanel extends JPanel {
     Image image=null;

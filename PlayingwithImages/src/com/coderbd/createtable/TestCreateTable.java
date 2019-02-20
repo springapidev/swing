@@ -22,7 +22,7 @@ public class TestCreateTable {
     static Connection conn = MySqlDbConnection.getConnection();
 
     public static void main(String[] args) {
-        String sql = "CREATE TABLE  `swing`.`image` (\n"
+        String sql = "CREATE TABLE  `swing`.`save_image` (\n"
                 + "  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,\n"
                 + "  `image` blob NOT NULL,\n"
                 + "  PRIMARY KEY (`id`) USING BTREE\n"
