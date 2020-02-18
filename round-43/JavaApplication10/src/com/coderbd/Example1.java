@@ -7,6 +7,7 @@ package com.coderbd;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -104,7 +105,11 @@ public class Example1 extends javax.swing.JFrame {
 
         jLabel3.setText("Name");
 
+        txtName.setText("Romana");
+
         jLabel4.setText("Email");
+
+        txtEmail.setText("romana@gmail.com");
 
         jLabel5.setText("Gender");
 
@@ -250,6 +255,11 @@ public class Example1 extends javax.swing.JFrame {
                 "S.L", "Name", "Email", "Gender", "Hobby", "Round"
             }
         ));
+        tblDisplay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblDisplayMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblDisplay);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -315,7 +325,7 @@ public class Example1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         String name = txtName.getText().trim();
         String email = txtEmail.getText().trim();
-
+        
         String gender = null;
         if (rMale.isSelected()) {
             gender = rMale.getText().trim();
@@ -323,7 +333,7 @@ public class Example1 extends javax.swing.JFrame {
         if (rFemale.isSelected()) {
             gender = rFemale.getText().trim();
         }
-
+        
         StringBuilder hobby = new StringBuilder();
         if (chkCoding.isSelected()) {
             hobby.append(chkCoding.getText().trim() + " ");
@@ -335,7 +345,6 @@ public class Example1 extends javax.swing.JFrame {
             hobby.append(chkPlaying.getText().trim());
         }
         String round = cmbRound.getSelectedItem().toString();
-
         //////////// validation started/////////////
         if (name.isEmpty()) {
             JOptionPane.showMessageDialog(rootPane, "Enter Your Name");
@@ -368,14 +377,14 @@ public class Example1 extends javax.swing.JFrame {
             model.addRow(row);
             clear();
         }
-
+        
 
     }//GEN-LAST:event_btnSubmitActionPerformed
     public boolean isValidEmail(String email) {
         boolean status = false;
         int atpos = email.indexOf("@");
         int dotpos = email.indexOf(".");
-
+        
         if (atpos > 0 && dotpos < email.length() - 1 && atpos < dotpos - 1) {
             status = true;
         }
@@ -386,6 +395,69 @@ public class Example1 extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) tblDisplay.getModel();
         model.setRowCount(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tblDisplayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDisplayMouseClicked
+        // TODO add your handling code here:
+        int i = tblDisplay.getSelectedRow();
+        TableModel model = tblDisplay.getModel();
+        txtName.setText(model.getValueAt(i, 1).toString());
+        txtEmail.setText(model.getValueAt(i, 2).toString());
+        String gender = model.getValueAt(i, 3).toString();
+        if (gender.equalsIgnoreCase("Male")) {
+            rMale.setSelected(true);
+        }
+        if (gender.equalsIgnoreCase("Female")) {
+            rFemale.setSelected(true);
+        }
+        String hobby = model.getValueAt(i, 4).toString();
+        String hobb[] = hobby.split(" ");
+        if (hobb.length == 1) {
+            clearHobby();
+            if (hobb[0].equalsIgnoreCase("Coding")) {
+                chkCoding.setSelected(true);
+            } else if (hobb[0].equalsIgnoreCase("Reading")) {
+                chkReading.setSelected(true);
+            } else if (hobb[0].equalsIgnoreCase("Playing")) {
+                chkPlaying.setSelected(true);
+            }
+        } else if (hobb.length == 2) {
+            clearHobby();
+            if (hobb[0].equalsIgnoreCase("Coding")) {
+                chkCoding.setSelected(true);
+            } else if (hobb[0].equalsIgnoreCase("Reading")) {
+                chkReading.setSelected(true);
+            } else if (hobb[0].equalsIgnoreCase("Playing")) {
+                chkPlaying.setSelected(true);
+            }
+            if (hobb[1].equalsIgnoreCase("Coding")) {
+                chkCoding.setSelected(true);
+            } else if (hobb[1].equalsIgnoreCase("Reading")) {
+                chkReading.setSelected(true);
+            } else if (hobb[1].equalsIgnoreCase("Playing")) {
+                chkPlaying.setSelected(true);
+            }
+        } else {
+            clearHobby();
+            if (!hobb[0].isEmpty() && hobb[0].equalsIgnoreCase("Coding")) {
+                chkCoding.setSelected(true);
+            }
+            if (!hobb[1].isEmpty() && hobb[1].equalsIgnoreCase("Reading")) {
+                chkReading.setSelected(true);
+            }
+            if (!hobb[2].isEmpty() && hobb[2].equalsIgnoreCase("Playing")) {
+                chkPlaying.setSelected(true);
+            }
+        }
+        String round = model.getValueAt(i, 5).toString();
+        cmbRound.setSelectedItem(round);
+        
+
+    }//GEN-LAST:event_tblDisplayMouseClicked
+    public void clearHobby() {
+        chkCoding.setSelected(false);
+        chkReading.setSelected(false);
+        chkPlaying.setSelected(false);
+    }
 
     /**
      * @param args the command line arguments
