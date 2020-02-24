@@ -5,6 +5,8 @@
  */
 package com.coderbd;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -53,6 +55,7 @@ public class Example1 extends javax.swing.JFrame {
         btnClear = new javax.swing.JButton();
         btnSubmit = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDisplay = new javax.swing.JTable();
@@ -161,6 +164,13 @@ public class Example1 extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Read From File");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -203,7 +213,8 @@ public class Example1 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(btnSubmit)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton1)))
+                                        .addComponent(jButton1))
+                                    .addComponent(jButton2))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
@@ -241,7 +252,9 @@ public class Example1 extends javax.swing.JFrame {
                     .addComponent(btnClear)
                     .addComponent(btnSubmit)
                     .addComponent(jButton1))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 255));
@@ -325,7 +338,7 @@ public class Example1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         String name = txtName.getText().trim();
         String email = txtEmail.getText().trim();
-        
+
         String gender = null;
         if (rMale.isSelected()) {
             gender = rMale.getText().trim();
@@ -333,7 +346,7 @@ public class Example1 extends javax.swing.JFrame {
         if (rFemale.isSelected()) {
             gender = rFemale.getText().trim();
         }
-        
+
         StringBuilder hobby = new StringBuilder();
         if (chkCoding.isSelected()) {
             hobby.append(chkCoding.getText().trim() + " ");
@@ -375,16 +388,20 @@ public class Example1 extends javax.swing.JFrame {
             row[4] = student.getHobby();
             row[5] = student.getRound();
             model.addRow(row);
+           
+            Utils.writeTofile("habib", student);
+
             clear();
+
         }
-        
+
 
     }//GEN-LAST:event_btnSubmitActionPerformed
     public boolean isValidEmail(String email) {
         boolean status = false;
         int atpos = email.indexOf("@");
         int dotpos = email.indexOf(".");
-        
+
         if (atpos > 0 && dotpos < email.length() - 1 && atpos < dotpos - 1) {
             status = true;
         }
@@ -450,9 +467,15 @@ public class Example1 extends javax.swing.JFrame {
         }
         String round = model.getValueAt(i, 5).toString();
         cmbRound.setSelectedItem(round);
-        
+
 
     }//GEN-LAST:event_tblDisplayMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel m = (DefaultTableModel) tblDisplay.getModel();
+        Utils.displayStudentsdataFromFile("habib", m);
+    }//GEN-LAST:event_jButton2ActionPerformed
     public void clearHobby() {
         chkCoding.setSelected(false);
         chkReading.setSelected(false);
@@ -503,6 +526,7 @@ public class Example1 extends javax.swing.JFrame {
     private javax.swing.JCheckBox chkReading;
     private javax.swing.JComboBox<String> cmbRound;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
